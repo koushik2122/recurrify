@@ -1,0 +1,6 @@
+import './globals.css';
+import Link from 'next/link';
+import {LayoutDashboard, Receipt, Repeat2, CreditCard, TrendingUp, Copy, CalendarClock, Building2, BarChart3, Settings} from 'lucide-react';
+export const metadata={title:'Recurrify — Recurring Expense Management',description:'Know what repeats. Know what it costs. Know what to keep.'};
+const nav=[['Dashboard','/','LayoutDashboard'],['Transactions','/transactions','Receipt'],['Recurring Expenses','/recurring','Repeat2'],['Subscriptions','/subscriptions','CreditCard'],['Forecast','/forecast','TrendingUp'],['Duplicates','/duplicates','Copy'],['Renewals','/renewals','CalendarClock'],['Departments','/departments','Building2'],['Analytics','/analytics','BarChart3'],['Settings','/settings','Settings']];
+export default function RootLayout({children}:{children:React.ReactNode}){return <html><body><div className="shell"><aside className="sidebar"><div className="brand">◈ Recurrify</div><nav className="nav">{nav.map(([n,u])=><Link key={n} href={u}>{n}</Link>)}</nav></aside><main className="main"><header className="top"><div className="mobile-nav"><b>◈ Recurrify</b></div><div className="muted">NovaTech Solutions · FY 2026</div><div style={{display:'flex',gap:10,alignItems:'center'}}><button className="btn">🔔 4</button><span>Finance Admin</span></div></header>{children}</main></div></body></html>}
